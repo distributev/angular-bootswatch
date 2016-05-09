@@ -16,6 +16,7 @@
     "express": "^4.9.3",
     "gulp": "^3.9.1",
     "gulp-load-plugins": "^1.2.2",
+    "gulp-task-listing": "^1.0.1",
     "morgan": "^1.1.1",
     "nodemon": "^1.9.2",
     "serve-favicon": "^2.0.1",
