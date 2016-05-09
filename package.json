@@ -15,7 +15,8 @@
     "gulp": "^3.9.1",
     "morgan": "^1.1.1",
     "nodemon": "^1.9.2",
-    "serve-favicon": "^2.0.1"
+    "serve-favicon": "^2.0.1",
+    "yargs": "^3.32.0"
   },
   "devDependencies": {
     "browser-sync": "~2.11.2",
