@@ -15,10 +15,10 @@
 <div class="header medium">
     <h1>Code coverage report for <span class="entity">app/blocks/logger/logger.js</span></h1>
     <h2>
-        Statements: <span class="metric">77.78% <small>(14 / 18)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">71.43% <small>(10 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Branches: <span class="metric">100% <small>(0 / 0)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Functions: <span class="metric">66.67% <small>(4 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
-        Lines: <span class="metric">77.78% <small>(14 / 18)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">33.33% <small>(2 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">71.43% <small>(10 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
     <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">app/blocks/logger/</a> &#187; logger.js</div>
@@ -68,11 +68,7 @@
 41
 42
 43
-44
-45
-46
-47
-48</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+44</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
@@ -83,7 +79,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">11</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -95,26 +91,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">11</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">9</span>
-<span class="cline-any cline-yes">9</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">3</span>
-<span class="cline-any cline-yes">3</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -126,10 +118,10 @@
     .module('blocks.logger')
     .factory('logger', logger);
 &nbsp;
-  logger.$inject = ['$log', 'toastr'];
+  logger.$inject = ['$log'];
 &nbsp;
   /* @ngInject */
-  function logger($log, toastr) {
+  function logger($log) {
     var service = {
       showToasts: true,
 &nbsp;
@@ -146,22 +138,18 @@
     /////////////////////
 &nbsp;
 <span class="fstat-no" title="function not covered" >    function error(message, data, title) {</span>
-<span class="cstat-no" title="statement not covered" >      toastr.error(message, title);</span>
 <span class="cstat-no" title="statement not covered" >      $log.error('Error: ' + message, data);</span>
     }
 &nbsp;
-    function info(message, data, title) {
-      toastr.info(message, title);
-      $log.info('Info: ' + message, data);
+<span class="fstat-no" title="function not covered" >    function info(message, data, title) {</span>
+<span class="cstat-no" title="statement not covered" >      $log.info('Info: ' + message, data);</span>
     }
 &nbsp;
-    function success(message, data, title) {
-      toastr.success(message, title);
-      $log.info('Success: ' + message, data);
+<span class="fstat-no" title="function not covered" >    function success(message, data, title) {</span>
+<span class="cstat-no" title="statement not covered" >      $log.info('Success: ' + message, data);</span>
     }
 &nbsp;
 <span class="fstat-no" title="function not covered" >    function warning(message, data, title) {</span>
-<span class="cstat-no" title="statement not covered" >      toastr.warning(message, title);</span>
 <span class="cstat-no" title="statement not covered" >      $log.warn('Warning: ' + message, data);</span>
     }
   }
@@ -171,7 +159,7 @@
 
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 10 2016 01:16:02 GMT+0530 (IST)</div>
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 10 2016 16:04:01 GMT+0530 (IST)</div>
 </div>
 <script src="../../../prettify.js"></script>
 <script>
