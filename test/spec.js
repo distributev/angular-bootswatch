@@ -13,17 +13,9 @@ describe('Protractor bootswatch App', function() {
 
     element(by.id('themes')).click();
     var EC = protractor.ExpectedConditions;
-	//Waits for the element with id 'abc' to be clickable.
-	browser.wait(EC.elementToBeClickable($('#'+eleIds[index])), 1000);
+    //Waits for the element with id 'abc' to be clickable.
+    browser.wait(EC.elementToBeClickable($('#'+eleIds[index])), 1000);
     element(by.id(eleIds[index])).click();
-
-    //check the current theme
-    element(by.id('bootstrap_theme')).getAttribute("href").then(function(value){
-    	if(index!=0)
-			expect(value).toContain(eleIds[index]);
-		else //defult theme will use href="#", so the href attribute will be current url
-			expect(value).toContain("http://localhost/bootswatch/app/index.html#");
-    });
 
     //logout
     element(by.id('logout')).click();
@@ -35,10 +27,10 @@ describe('Protractor bootswatch App', function() {
     element(by.id('submit')).click();
 
     element(by.id('bootstrap_theme')).getAttribute("href").then(function(value){
-    	if(index!=0)
-			expect(value).toContain(eleIds[index]);
-		else
-			expect(value).toContain("http://localhost/bootswatch/app/index.html#");
+        if(index!=0)
+            expect(value).toContain(eleIds[index]);
+        else
+            expect(value).toContain("http://localhost/bootswatch/app/index.html#");
     });
     
   });
