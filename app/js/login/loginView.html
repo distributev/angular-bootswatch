@@ -1,0 +1,18 @@
+<div>
+<div ng-show="authorizeFail" style="color:red">Invalid username or password!</div>
+ <form>
+    <table>
+    	<tr><td>username</td></tr>
+    	<tr>
+    		<td><input  ng-model="user.username" type="text"/></td>
+    	</tr>
+    	<tr><td>password</td></tr>
+    	<tr>
+    		<td>
+          		<input ng-model="user.password" type="password" />
+        	</td>
+    	</tr> 
+    </table>
+    <button id="submit" ng-click="login()">Submit</button>
+    </form>
+</div>
