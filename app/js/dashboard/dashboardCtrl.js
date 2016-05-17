@@ -7,7 +7,7 @@ angular.module('bootswatchApp').controller('DashboardCtrl',
 
 	$scope.changeTheme = function(name){
 			if(name!="default")
-		    	$("#bootstrap_theme").attr("href","../bower_components/bootswatch/"+bootswatchAuth.getUser().theme+"/bootstrap.min.css");
+		    	$("#bootstrap_theme").attr("href","../bower_components/bootswatch/"+name+"/bootstrap.min.css");
 		    else
 		    	$("#bootstrap_theme").attr("href","#" );
 		    var data = bootswatchAuth.getUser().username+","+bootswatchAuth.getUser().password+","+name;
