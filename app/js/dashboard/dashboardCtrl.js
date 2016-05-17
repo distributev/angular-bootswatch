@@ -3,11 +3,11 @@ angular.module('bootswatchApp').controller('DashboardCtrl',
 	function($scope,$location,$window,$anchorScroll,bootswatchAuth,UserService){
 
 	if(bootswatchAuth.getUser().theme != "default")
-		$("#bootstrap_theme").attr("href","https://bootswatch.com/"+bootswatchAuth.getUser().theme+"/bootstrap.min.css" );
+		$("#bootstrap_theme").attr("href","../bower_components/bootswatch/"+bootswatchAuth.getUser().theme+"/bootstrap.min.css" );
 
 	$scope.changeTheme = function(name){
 			if(name!="default")
-		    	$("#bootstrap_theme").attr("href","https://bootswatch.com/"+name+"/bootstrap.min.css" );
+		    	$("#bootstrap_theme").attr("href","../bower_components/bootswatch/"+bootswatchAuth.getUser().theme+"/bootstrap.min.css");
 		    else
 		    	$("#bootstrap_theme").attr("href","#" );
 		    var data = bootswatchAuth.getUser().username+","+bootswatchAuth.getUser().password+","+name;
