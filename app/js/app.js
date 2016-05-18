@@ -1,5 +1,5 @@
 var bootswatchApp=angular.module('bootswatchApp',
-  ['ngRoute'
+  ['ngRoute','FileManagerApp'
   ]);
 bootswatchApp.config(['$routeProvider','$httpProvider',
   function($routeProvider, $httpProvider) {
@@ -14,6 +14,12 @@ bootswatchApp.config(['$routeProvider','$httpProvider',
         controller:'LoginCtrl',
         templateUrl: 'js/login/loginView.html',
         pageTitle: 'Login',
+      }).
+      when( '/file-manager', {
+         controller:'FileCtrl',
+        templateUrl: 'js/fileManager/fileManager.html',
+        pageTitle: 'fileManager',
+        requiresLogin: true
       }).
       otherwise({
         redirectTo: '/main'

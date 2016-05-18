@@ -22,6 +22,10 @@ angular.module('bootswatchApp').controller('DashboardCtrl',
 		$location.hash(name);
       	$anchorScroll();
 	};
+	
+	$scope.loadFileManager = function(){
+		$location.path('/file-manager');
+	};
 
 	$scope.logout = function(){
 		bootswatchAuth.isAuthenticated = false;
