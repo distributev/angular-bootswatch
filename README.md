@@ -5,6 +5,6 @@ login via http://localhost/bootswatch/app/index.html#/login with 3 test file in 
 
 Protrator test this with random theme select, passed.
 
-angular-filemanager intergration(including most of function of original except compress and permission,bulk opration supported)
+angular-filemanager intergration(including most of function of original except compress and permission,bulk opration supported),directive will have initial-folder and theme as parameter
 
-change bootswatch theme will update angular-filemanager theme as well.
+start angular-filemanager nodejs server  change bootswatch theme will update angular-filemanager theme as well.
