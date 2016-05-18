@@ -11,9 +11,9 @@ var del = require('del');
 var path = require('path');
 
 // Vars
-var src = 'src/';
+var src = 'app/';
 var dst = 'dist/';
-var tplPath = 'src/templates'; //must be same as fileManagerConfig.tplPath
+var tplPath = 'app/js/directive/fileManager/app/templates'; //must be same as fileManagerConfig.tplPath
 var jsFile = 'angular-filemanager.min.js';
 var cssFile = 'angular-filemanager.min.css';
 
