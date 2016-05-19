@@ -9,7 +9,7 @@
                 var theme = scope.$eval(attrs.theme);
                 var folder = attrs['initialFolder'];
                 new ApiMiddleware().initial(folder);
-        
+        console.log(fileManagerConfig.tplPath)
                 if(theme){
                     $('#bootstrap_theme').attr("href","../bower_components/bootswatch/"+theme+"/bootstrap.min.css");
                 }

@@ -1,6 +1,6 @@
 angular.module('bootswatchApp').controller('FileCtrl',
 	['$scope','$location','$window','bootswatchAuth','UserService',function($scope,$location,$window,bootswatchAuth,UserService){
-		$scope.folder = '/nginx-1.9.14/html';
+		$scope.folder = '/home/ubuntu/workspace';
 
 		$scope.theme = bootswatchAuth.getUser().theme;
 

@@ -1,4 +1,4 @@
 var config={
-	service_url:'http://localhost:3001',
-	socketio_url:'http://localhost:2000'
+	service_url:'http://bootswatch-wengjiahong.c9users.io:8080'
+
 };

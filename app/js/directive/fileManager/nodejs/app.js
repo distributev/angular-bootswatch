@@ -4,7 +4,7 @@ var http = require('http');
 var server = http.createServer(app);
 var fs = require('fs');
 
-process.env.PORT = process.env.PORT || 5000;
+process.env.PORT = process.env.PORT || 8081;
 // process.env.DATA_DIR = process.env.DATA_DIR || 'data';
 
 // try {
@@ -19,16 +19,18 @@ process.env.PORT = process.env.PORT || 5000;
 //   console.error('%s is not a directory. Please specify a valid data directory by using the environment variable DATA_DIR.', process.env.DATA_DIR);
 //   process.exit(1);
 // }
+process.env.PORT = 8081;
+app.set('port',process.env.PORT);
 
-
-
+process.env.PORT
 require('./config/express')(app);
 
 // Routing
 app.use(require('./routes'));
 
 // Start server
-server.listen(5000, function() {
+server.listen(app.get('port'), function() {
+    console.log(app.get('port'))
   console.info('Server started on port %d serving directory Waiting for requests...', process.env.PORT);
 });
 

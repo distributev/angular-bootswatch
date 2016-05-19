@@ -7,17 +7,17 @@ bootswatchApp.config(['$routeProvider','$httpProvider',
   $routeProvider.
   	  when('/main',{
   	  	controller: 'DashboardCtrl',
-        templateUrl:'js/dashboard/dashboardView.html',
+        templateUrl:'app/js/dashboard/dashboardView.html',
         requiresLogin: true
       }).
       when( '/login', {
         controller:'LoginCtrl',
-        templateUrl: 'js/login/loginView.html',
+        templateUrl: 'app/js/login/loginView.html',
         pageTitle: 'Login',
       }).
       when( '/file-manager', {
          controller:'FileCtrl',
-        templateUrl: 'js/fileManager/fileManager.html',
+        templateUrl: 'app/js/fileManager/fileManager.html',
         pageTitle: 'fileManager',
         requiresLogin: true
       }).

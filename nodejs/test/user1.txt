@@ -1,1 +1,1 @@
-user1,123,lumen
+user1,123,paper
