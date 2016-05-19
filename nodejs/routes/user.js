@@ -8,8 +8,7 @@ module.exports={
   login:function(req,res){
      var username = req.body.username;
      var password = req.body.password;
-console.log(username);
-console.log(password);
+
      fs.readFile('./test/'+username+'.txt', 'utf8', function (err,data) {
           if (err) {
             console.log(err)
