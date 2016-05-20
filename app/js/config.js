@@ -1,3 +1,3 @@
 var config={
-	service_url:'http://bootswatch-wengjiahong.c9users.io:8080'
+	service_url:'https://bootswatch2-wengjiahong.c9users.io:8080'
 };
