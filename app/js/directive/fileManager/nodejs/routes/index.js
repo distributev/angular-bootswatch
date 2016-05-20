@@ -94,7 +94,6 @@ routes.get('/download', function (req, res, next) {
   promise = promise.then(function(stat) {
 
     if(!stat.isFile()) {
-      //console.log("Cannot access file " + filePath + " (or is no file)");
       throw new Error("Cannot access file " + filePath + " (or is no file)");
     }
    
@@ -108,7 +107,7 @@ routes.get('/download', function (req, res, next) {
   });
 
   promise = promise.catch(function(err,stats) {
-  	console.log("Erer")
+
     res.status(500);
     res.send({
       "result": {
@@ -127,7 +126,6 @@ routes.get('/multidownload', function (req, res, next) {
 
     var mimeType = 'application/zip';
     var filename = req.query.toFilename;
-    //console.log('mimetype: ' + mimeType);
 
     res.setHeader('Content-disposition', 'attachment; filename='+filename);
     res.setHeader('Content-type', mimeType);
@@ -136,10 +134,8 @@ routes.get('/multidownload', function (req, res, next) {
 
     // Send the file to the page output.
     zip.pipe(res);
-    console.log(files)
     for(var i in files) {
     	var filePath = path.join(pathResolver.baseDir(req), pathResolver.pathGuard(files[i]));
-    		console.log(filePath)
 	    zip.file(filePath, { name: path.basename(files[i]) });
 	}
     zip.finalize();
@@ -267,7 +263,6 @@ routes.post('/copy', function (req, res, next) {
 			 fs.copyAsync(oldPath, newPath).then(function(){
 			 	callback();
 			 }).catch(function(err){
-			 	console.log(err)
 			 	callback(err);
 			 });
 		},function(err){
