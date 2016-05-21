@@ -9,7 +9,7 @@ angular-filemanager intergration(including most of function of original except c
 
 start angular-filemanager nodejs server  change bootswatch theme will update angular-filemanager theme as well.
 
-Steps to run the app on c9.io(cloud server):
+Steps to run the app on c9.io(cloud server):  
 1. go to directory nodejs run node app.js to start bootswatch server(which listen on 8080 port).  
 2. go to directory app/js/directive/filemanager/nodejs run node app.js(which listen on 8081 port) to start file manager server.  
 3. Two server set up here since these are two different project, fileManager supposed to be re-usable.  
