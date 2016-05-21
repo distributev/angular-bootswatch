@@ -2,12 +2,13 @@
     'use strict';
     var app = angular.module('FileManagerApp');
 
-    app.directive('angularFilemanager', ['$parse', 'fileManagerConfig', 'apiMiddleware',function($parse, fileManagerConfig,ApiMiddleware) {
+    app.directive('angularFilemanager', ['$parse', 'fileManagerConfig', 'apiMiddleware','SocketService',function($parse, fileManagerConfig,ApiMiddleware,SocketService) {
         return {
             restrict: 'EA',
              link: function(scope, elem, attrs){
                 var theme = scope.$eval(attrs.theme);
                 var folder = attrs['initialFolder'];
+                SocketService.connect();
                 new ApiMiddleware().initial(folder);
  
                 if(theme){

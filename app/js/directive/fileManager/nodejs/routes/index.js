@@ -10,6 +10,8 @@ var dateformat = require('../utils/dateformat');
 var pathResolver = require('../utils/pathresolver');
 var async = require('async');
 var Archiver = require('archiver');
+var watch = require('node-watch');
+var io = null;
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -25,11 +27,13 @@ var upload = multer({ storage: storage });
 routes.post('/initial',function(req,res,next){
 	var initialFolder = req.body.initialFolder;
 	process.env.DATA_DIR = initialFolder;
-	res.send({"result":"ok"});
+  watch(initialFolder, function(filename) {
+      io.emit('change detected',{data:filename});
+    });
+    res.send("watching started");
 });
 
 routes.post('/list', function (req, res, next) {
-
   var promise;
   var self = this;
   var fsPath = path.join(pathResolver.baseDir(req), pathResolver.pathGuard(req.body.path));
@@ -342,4 +346,11 @@ routes.post('/move', function (req, res, next) {
     });
   });
 });
-module.exports = routes;
+module.exports = {
+  connection: function(ioInput,socket){
+    io=ioInput;
+  },
+  setup:function(){
+    return routes;
+  }
+};

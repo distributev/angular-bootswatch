@@ -1,8 +1,8 @@
 (function(angular, $) {
     'use strict';
     angular.module('FileManagerApp').controller('FileManagerCtrl', [
-        '$scope', '$rootScope','$timeout', '$window', '$translate', 'fileManagerConfig', 'item', 'fileNavigator', 'apiMiddleware',
-        function($scope, $rootScope, $timeout,$window, $translate, fileManagerConfig, Item, FileNavigator, ApiMiddleware) {
+        '$scope', '$rootScope','$timeout', '$window', '$translate', 'fileManagerConfig', 'item', 'fileNavigator', 'apiMiddleware','SocketService',
+        function($scope, $rootScope, $timeout,$window, $translate, fileManagerConfig, Item, FileNavigator, ApiMiddleware,SocketService) {
 
         var $storage = $window.localStorage;
         $scope.config = fileManagerConfig;
@@ -20,6 +20,12 @@
         $scope.viewTemplate = $storage.getItem('viewTemplate') || 'main-table.html';
         $scope.fileList = [];
         $scope.temps = [];
+        $scope.SocketService=SocketService;
+        $scope.$watch('SocketService.getData()', function(newVal, oldVal) {
+           if(newVal){
+                $scope.fileNavigator.refresh();
+            }
+        });
 
 
         $scope.$watch('temps', function() {

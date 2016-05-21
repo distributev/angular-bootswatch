@@ -12,10 +12,10 @@
         };
 
         ApiHandler.prototype.deferredHandler = function(data, deferred, defaultMsg) {
-            if (!data || typeof data !== 'object') {
+            if (this && (!data || typeof data !== 'object')) {
                 this.error = 'Bridge response error, please check the docs';
             }
-            if (data.result && data.result.error) {
+            if (this && data.result && data.result.error) {
                 this.error = data.result.error;
             }
             if (this && !this.error && data.error) {
