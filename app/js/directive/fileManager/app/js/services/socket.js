@@ -10,8 +10,6 @@ angular.module('FileManagerApp').factory('SocketService',['$rootScope','fileMana
 		 		socket.on('connect', function (data) {		
 		 			socket.on('change detected',function(data){
 		 				newData = data;
-		 				console.log(data)
-		 				// new FileNavigator().refresh();
 		 				$rootScope.$apply();
 					});	   
 			
