@@ -5,8 +5,8 @@
         var values = {
             appName: 'angular-filemanager v1.5',
             defaultLang: 'en',
-            serverUrl:'https://bootswatch2-wengjiahong.c9users.io:8081',
-            socketUrl:'https://bootswatch2-wengjiahong.c9users.io:8082',
+            serverUrl:'$ENV.APP_URL$.c9users.io:8081',
+            socketUrl:'$ENV.APP_URL$.c9users.io:8082',
             initUrl:"/initial",
             listUrl: '/list',
             uploadUrl: '/upload',
