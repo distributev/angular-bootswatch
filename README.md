@@ -15,3 +15,4 @@ Steps to run the app on c9.io(cloud server):
 3. Two server set up here since these are two different project, fileManager supposed to be re-usable.  
 4. Edit the config file in app/js/config.js and another is in app/js/directive/fileManager/app/js/providers/config.js to make sure service url is same with cloud server url and using the port 8080 and 8081 respectively.  
 5. Also edit the socketUrl to match your server url using port 8082.  
+6. Finally run npm install and bower install in app/js/directive/fileManager and gulp to generate the newest min file for angular-fileManager.  
